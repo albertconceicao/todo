@@ -1,0 +1,222 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: -1.7rem 0 0 0;
+}
+
+.main input{
+    width: 100%;
+    height: 3.375rem;
+    padding: 1rem;
+    background: #262626;
+    border-radius: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    border: 1px solid #0D0D0D;
+    color: #fff;
+}
+
+.main input::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    color: #808080;
+}
+
+.buttonContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.main button {
+    font-family: 'Inter', sans-serif;
+    background: #1E6F9F;
+    border: 1px solid #1E6F9F;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    height: 3.375rem;
+    color: #F2F2F2;
+    line-height: 1.375rem;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.main button:hover {
+    background: #4EA8DE;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+.headerInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 0.5rem;
+}
+
+.createdTasks, .concludedTasks {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.05875rem;
+}
+
+.createdTasks {
+    color: #4EA8DE;
+    text-transform: capitalize;
+}
+
+.concludedTasks {
+    color: #8284FA;
+    text-transform: capitalize;
+}
+
+.counter {
+    background: #333333;
+    padding: 0.125rem 0.5rem;
+    border-radius: 62.4375rem;
+    color: #D9D9D9;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 0.9375rem;
+}
+
+
+.tasksEmptyContent {
+
+    border-top: 1px solid #333333;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    
+    padding: 4rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tasksEmptyContent span {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    color: #808080;
+}
+.emptyContentTitle {
+    margin-top: 1rem;
+    font-weight: 700;
+    
+}
+
+.tasksContent {
+    margin-top: 1.5rem;
+    background: #262626;
+    border: 1px solid #333333;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+    border-radius: 0.5rem;
+
+
+    height: 4.5rem;
+    padding: 1rem;
+    gap: 0.75rem;
+
+    display: flex;
+    /* justify-content: space-between; */
+    /* flex-direction: row; */
+    align-items:  flex-start;
+
+}
+
+.tasksContent span {
+    font-weight: 400;
+    font-size: 0.875rem;
+    /* line-height: 1.375rem; */
+    color: #F2F2F2;
+
+    height: 2.5rem;
+    width: 39.5rem;
+
+    /* align-self: stretch; */
+}
+
+
+.tasksContent input:checked {
+    color: #9999ff;
+}
+
+.tasksContent button {
+    background: transparent;
+    border-radius: 0.225rem;
+    border: transparent;
+    color: #808080;
+    padding: 0.25rem;
+}
+
+.tasksContent button:hover {
+    color: #ff8080;
+    background: #333333;
+    /* padding: 0.225rem; */
+}
+
+.checkedIcon circle{
+    color: #fff;
+    background: #8284FA;
+}
+.checkedIcon polyline {
+    background: #8284FA;
+}
+
+.checkedInput input {
+    display: none;
+}
+
+.checkedInput span {
+    width: 1.375rem;
+    height: 1.375rem;
+    border-radius: 100rem;
+    background: transparent;
+    border: 2px solid lightblue;
+    display: block;
+}
+.checkedInput span:hover {
+    background: #8284FA;
+    border: 2px solid #8284FA;
+}
+
+.checkedInput input:checked + span, .checkedInputActive input:checked + span{
+    background-color: #9999ff;
+    border: 2px solid #9999ff;
+}
+
+span::after {
+    display: none;
+}
+
+.checkedInput span::after {
+    content: '';
+    margin: 0.2rem auto;
+    width: 4px;
+    height: 7px;
+    transform: rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+
+}
+.checkedInput span:hover ~ span::after {
+    display: block;
+}
+
+.checkedInput input:checked ~ span::after {
+    display: block;
+}
+
+span.textCompleted {
+    text-decoration: line-through;
+    color: #808080;
+}
