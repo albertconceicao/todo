@@ -26,6 +26,7 @@ export const Tasks = ({tasks, onHandleCreateNewTask, onHandleDeleteTask, onCompl
         event.preventDefault();
 
         onHandleCreateNewTask(taskText);
+        setTaskText('');
     }
 
     const handleNewEmptyTask = (event: InvalidEvent<HTMLInputElement>) => {

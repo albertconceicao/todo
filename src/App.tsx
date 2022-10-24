@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Header } from './components/Header';
 import { Tasks } from './components/TaskList/Tasks';
 import styles from './styles/global.module.css';
@@ -12,8 +12,25 @@ export interface ITask {
 function App() {
   const [tasks, setTasks] = useState<ITask[]>([]);
 
+  const loadTasks = () => {
+    const tasksOnStorage = localStorage.getItem('tasks');
+
+    if(tasksOnStorage) {
+      setTasks(JSON.parse(tasksOnStorage));
+    }
+  }
+
+  useEffect(() => {
+    loadTasks();
+  }, [])
+
+  const setTasksAndUpload = (newTasks: ITask[]) => {
+    setTasks(newTasks);
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
+  }
+
   const handleCreateTask = (taskTitle: string) => {
-    setTasks([
+    setTasksAndUpload([
       ...tasks,
       {
         id: crypto.randomUUID(),
@@ -24,9 +41,11 @@ function App() {
     ])
   }
 
+  
+
   const deleteTaskById = (taskId: string) => {
     const newTasks = tasks.filter(task => task.id !== taskId);
-    setTasks(newTasks);
+    setTasksAndUpload(newTasks);
   }
   const toggleTaskCompletedById = (taskId: string) => {
     const newTasks = tasks.map(task => {
@@ -39,7 +58,7 @@ function App() {
       return task;
     });
 
-    setTasks(newTasks);
+    setTasksAndUpload(newTasks);
   }
 
   return (
