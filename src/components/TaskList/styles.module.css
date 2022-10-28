@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    margin: -1.7rem 0 0 0;
+    margin: -1.7rem 1rem 0 1rem;
 }
 
 .main input{
@@ -115,7 +115,7 @@
 }
 
 .tasksContent {
-    margin-top: 1.5rem;
+    margin: 1.5rem 1rem;
     background: #262626;
     border: 1px solid #333333;
     box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
@@ -219,4 +219,9 @@ span::after {
 span.textCompleted {
     text-decoration: line-through;
     color: #808080;
+}
+.buttonTaskContent {
+    display: flex;
+    align-items: center;
+    
 }

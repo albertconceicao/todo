@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Header } from './components/Header';
 import { Tasks } from './components/TaskList/Tasks';
+import { api } from './services/api';
 import styles from './styles/global.module.css';
 
 export interface ITask {
@@ -14,6 +15,10 @@ function App() {
 
   const loadTasks = () => {
     const tasksOnStorage = localStorage.getItem('tasks');
+    api.get('/tasks').then((response) => {
+      console.log(response.data)
+      // setTasks(response.data);
+    })
 
     if(tasksOnStorage) {
       setTasks(JSON.parse(tasksOnStorage));
